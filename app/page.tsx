@@ -62,7 +62,7 @@ export default function Home() {
              <ambientLight intensity={1} />
              {/* FIX: Applied dynamic scale state here */}
              <group scale={logoScale}>
-               <LiquidLogo imageUrl="/assets/void-busts-logo.png" />
+               <LiquidLogo imageUrl="/assets/numb-logo.png" />
              </group>
           </Canvas>
         </div>
@@ -87,8 +87,8 @@ export default function Home() {
             textTransform: 'uppercase',
             lineHeight: '1.6'
           }}>
-            1,111 cryptographic artifacts forged in absolute isolation. The 5 rarity tiers dictate the permanent weight of the void.
-          </p>
+           1,111 HIGH-POLY TACTICAL CONSTRUCTS SECURED OFF THE GRID. THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE LEVEL.
+</p>
         </div>
 
         {/* NAVIGATION */}
@@ -98,25 +98,25 @@ export default function Home() {
 
           {/* Center Logo Crest (True absolute grid centering, never covered) */}
           <div className="flex justify-center items-center">
-            <img src="/assets/logo-crest.png" alt="Void Busts Crest" className="w-8 h-8 object-contain" />
+            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="w-8 h-8 object-contain" />
           </div>
 
           {/* Top-Right Mint Button */}
           <div className="flex justify-end">
             <a href="#" className="font-mono text-[9px] sm:text-xs uppercase tracking-widest text-white border border-neutral-800 bg-black/60 px-3 sm:px-4 py-2 hover:border-white transition-colors block whitespace-nowrap">
-              Mint A Bust
+              Mint A Poly
             </a>
           </div>
         </nav>
 
         {/* HERO FOOTER */}
         <footer style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '2rem', boxSizing: 'border-box' }}>
-          <div className="font-mono text-xs text-neutral-400">© VOID BUSTS 2026</div>
+          <div className="font-mono text-xs text-neutral-400">© Numb Polys 2026</div>
           
           <div className="footer-links flex items-center gap-6 font-mono text-xs">
             <div className="flex items-center gap-5">
               {/* X (Twitter) Icon */}
-              <a href="https://x.com/thevoidbusts" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="X (Twitter)">
+              <a href="https://x.com/numbpolys" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="X (Twitter)">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>

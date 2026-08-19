@@ -7,7 +7,7 @@ import { useTexture } from '@react-three/drei';
 
 const vertexShader = `
   varying vec2 vUv;
-  void main() {
+  Numb main() {
     vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
@@ -19,7 +19,7 @@ const fragmentShader = `
   uniform float uTime;
   varying vec2 vUv;
 
-  void main() {
+  Numb main() {
     vec2 uv = vUv;
     
     // Create a glitch/liquid wave effect based on hover state and time

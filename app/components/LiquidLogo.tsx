@@ -7,7 +7,7 @@ import { useTexture } from '@react-three/drei';
 
 const vertexShader = `
   varying vec2 vUv;
-  void main() {
+  Numb main() {
     vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
@@ -20,7 +20,7 @@ const fragmentShader = `
   uniform float uHover;
   varying vec2 vUv;
 
-  void main() {
+  Numb main() {
     vec2 uv = vUv;
     
     float idleWaveX = sin(uv.y * 10.0 + uTime * 1.5) * 0.003;

@@ -8,49 +8,57 @@ import BustShaderCard from './BustShaderCard';
 const traits = [
   {
     id: '01',
-    category: 'THE PRIME ORIGINS',
-    title: 'GENESIS NODE',
-    description: 'THE 11 FOUNDATIONAL ANCHORS. THESE ULTRA-RARE CONSTRUCTS HOLD ROOT-LEVEL SYSTEM AUTHORITY, MASTER KEYWAYS, AND RAW ELEMENTAL FINISHES.',
-    tag: '11 UNIQUE TYPES',
-    imageUrl: '/assets/767.png',
+    category: 'MYTHIC / THE UNKNOWN',
+    title: 'THE ANOMALIES',
+    description: 'CUSTOM 1-OF-1 GRAILS FEATURING HANDCRAFTED MESH EDITS, EXCLUSIVE SHADERS, AND UNIQUE ASSET BUILDS. LED BY THE GOLDEN RUNNER.',
+    tag: '11 UNITS',
+    imageUrl: '/assets/mythic_placeholder.png',
   },
   {
     id: '02',
-    category: 'SOVEREIGN OVERSEERS',
-    title: 'ARCHON CORE',
-    description: 'HIGH-CAPACITY COMMAND UNITS BUILT TO ENFORCE INTEGRITY, FEATURING VOLATILE HEAD MODIFIERS AND OVERCLOCKED OPTICS.',
+    category: 'LEGENDARY / KINGPIN',
+    title: 'THE APEX',
+    description: 'THE ELITE OPERATORS OF THE SYNDICATE. EQUIPPED WITH EXCLUSIVE IRIDESCENT SKINS, OIL SLICKS, AND GOLD-VEINED MARBLES TO DICTATE THE UNDERWORLD.',
     tag: '55 UNITS',
-    imageUrl: '/assets/936.png',
+    imageUrl: '/assets/legendary_placeholder.png',
   },
   {
     id: '03',
-    category: 'TACTICAL FIELD ENFORCERS',
-    title: 'SECTOR PRIME',
-    description: 'HARDENED CONSTRUCTS EQUIPPED WITH SPECIALIZED TACTICAL GEAR, BUILT TO SURVIVE THE GRID AND SECURE DATA.',
-    tag: '155 UNITS',
-    imageUrl: '/assets/935.png',
+    category: 'EPIC / GHOST',
+    title: 'PHANTOM CLASS',
+    description: 'HIGH-COMPLEXITY PATTERNS, SOLAR GRIDS, AND BIOLUMINESCENT SKINS DESIGNED FOR STEALTH, HIGH-STAKES INFILTRATION, AND ZERO-TRACE TACTICS.',
+    tag: '110 UNITS',
+    imageUrl: '/assets/epic_placeholder.png',
   },
   {
     id: '04',
-    category: 'ENCRYPTED SIGNAL CONDUITS',
-    title: 'NETWORK RELAY',
-    description: 'THE ACTIVE DATA ROUTERS OF THE NETWORK, CARRYING THE CRITICAL CRYPTOGRAPHIC CIPHER STAMPS EMBEDDED IN THEIR APPAREL.',
-    tag: '300 UNITS',
-    imageUrl: '/assets/1110.png',
+    category: 'RARE / ENFORCER',
+    title: 'TACTICAL HEAVY',
+    description: 'HARDENED CONSTRUCTS FORGED WITH PURE METALS, COPPER, AND CHAMPAGNE GOLD. THE METHODICAL ENFORCERS OF THE GRID.',
+    tag: '220 UNITS',
+    imageUrl: '/assets/rare_placeholder.png',
   },
   {
     id: '05',
-    category: 'THE STRUCTURAL BEDROCK',
-    title: 'STANDARD FACET',
-    description: 'THE ESSENTIAL GEOMETRIC UNITS FORMING THE PHYSICAL MASS AND VISUAL FOUNDATION OF THE ENTIRE ARCHITECTURE.',
-    tag: '590 UNITS',
-    imageUrl: '/assets/1109.png',
+    category: 'UNCOMMON / ROGUE',
+    title: 'FIELD OPERATIVE',
+    description: 'METHODICAL UNITS FEATURING DARK BRONZES, SILVERS, AND VANTABLACK BASES. THE ACTIVE DATA ROUTERS AND GROUND FORCES OF THE NETWORK.',
+    tag: '330 UNITS',
+    imageUrl: '/assets/uncommon_placeholder.png',
+  },
+  {
+    id: '06',
+    category: 'COMMON / CIVILIAN',
+    title: 'STANDARD ISSUE',
+    description: 'SMOOTH, MATTE CLAYS AND EARTH TONES. CLEAN, MINIMALIST BUILDS FORMING THE FOUNDATIONAL ROSTER OF THE SYNDICATE.',
+    tag: '385 UNITS',
+    imageUrl: '/assets/common_placeholder.png',
   },
 ];
 
 export default function TraitGallery() {
   const targetRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null); // New ref to measure the scrolling track
+  const trackRef = useRef<HTMLDivElement>(null); 
   const [scrollRange, setScrollRange] = useState(0);
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   
@@ -58,7 +66,6 @@ export default function TraitGallery() {
     target: targetRef,
   });
 
-  // Calculate the exact pixel distance the track needs to move
   useEffect(() => {
     const updateRange = () => {
       if (trackRef.current) {
@@ -73,7 +80,6 @@ export default function TraitGallery() {
     return () => window.removeEventListener('resize', updateRange);
   }, []);
 
-  // Map progress to the exact calculated pixel range
   const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   const toggleCard = (id: string) => {
@@ -87,10 +93,10 @@ export default function TraitGallery() {
         {/* Section Header */}
         <div className="absolute top-10 left-6 z-20 md:top-14 md:left-14 pointer-events-none">
           <p className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-neutral-500 uppercase">
-            LAYER GENERATION PROTOCOL
+            SYNDICATE CLEARANCE PROTOCOL
           </p>
           <h2 className="mt-2 text-xl sm:text-2xl font-bold uppercase tracking-wider text-white md:text-4xl">
-            5 RARITY CATEGORIES
+            6 SYNDICATE TIERS
           </h2>
         </div>
 
@@ -98,7 +104,6 @@ export default function TraitGallery() {
         <motion.div 
           ref={trackRef} 
           style={{ x }} 
-          // Replaced pr-[20vw] with symmetrical padding (px-...) and added w-max to ensure correct measurement
           className="flex w-max gap-6 px-6 sm:gap-8 sm:px-8 md:gap-12 md:px-14 mt-24 md:mt-32 will-change-transform"
         >
           {traits.map((trait) => {
@@ -122,7 +127,7 @@ export default function TraitGallery() {
                 {/* 2. TOP SECTION: ID, TAG, CATEGORY, & TITLE */}
                 <div className="relative z-10 space-y-1 pointer-events-none">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10px] sm:text-xs text-neutral-400">{trait.id} // 05</span>
+                    <span className="font-mono text-[10px] sm:text-xs text-neutral-400">{trait.id} // 06</span>
                     <span className="border border-neutral-800 bg-neutral-900/90 px-2 sm:px-3 py-1 font-mono text-[9px] sm:text-[10px] tracking-wider uppercase text-neutral-300">
                       {trait.tag}
                     </span>
@@ -157,7 +162,7 @@ export default function TraitGallery() {
                   </div>
 
                   <div className="border-t border-neutral-800 pt-4 flex justify-between items-center font-mono text-[9px] sm:text-[10px] text-neutral-500">
-                    <span>VOID BUSTS PROTOCOL</span>
+                    <span>NUMB POLYS PROTOCOL</span>
                     <span className="text-white">ACTIVE</span>
                   </div>
                 </div>
@@ -165,7 +170,7 @@ export default function TraitGallery() {
                 {/* 4. BOTTOM FOOTER LINE */}
                 <div className="absolute bottom-0 left-0 w-full z-10 flex items-center justify-between border-t border-neutral-800/90 py-4 px-6 sm:px-8 font-mono text-[10px] text-neutral-400 pointer-events-none bg-black/40 backdrop-blur-xs">
                   <span className="text-neutral-300 uppercase tracking-wider">
-                    {isExpanded ? '[ CLOSE SPECS ]' : '[ CLICK TO VIEW SPECS ]'}
+                    {isExpanded ? '[ CLOSE DOSSIER ]' : '[ CLICK TO VIEW DOSSIER ]'}
                   </span>
                   <span className="text-white transition-transform group-hover:translate-x-1">→</span>
                 </div>

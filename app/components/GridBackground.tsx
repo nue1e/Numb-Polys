@@ -9,7 +9,7 @@ const vertexShader = `
   varying vec2 vUv;
   uniform vec2 uScale;
   
-  void main() {
+  Numb main() {
     // Multiply the uv by uScale to fix the squishing and maintain perfect squares
     vUv = uv * uScale; 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
@@ -23,7 +23,7 @@ const fragmentShader = `
   uniform vec2 uScale;
   varying vec2 vUv;
 
-  void main() {
+  Numb main() {
     // 1. INFINITE PANNING
     vec2 panningUv = vUv + vec2(uTime * 0.05, uTime * 0.03);
     
@@ -47,7 +47,7 @@ const fragmentShader = `
     
     vec4 texColor = texture2D(uTexture, finalUv);
     
-    // 3. DIM THE VOID
+    // 3. DIM THE Polys
     vec3 tint = vec3(0.25, 0.25, 0.25); 
     
     gl_FragColor = vec4(texColor.rgb * tint, 1.0);

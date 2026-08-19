@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Void Busts",
-  description: "Official Void Busts Site",
+export const metadata = {
+  title: 'Numb Polys',
+  description: 'A premium 1,111-piece 3D generative syndicate.',
   icons: {
     icon: "/favicon.ico",
   },

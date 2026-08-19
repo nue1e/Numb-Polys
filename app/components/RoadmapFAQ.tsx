@@ -4,24 +4,24 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    question: "What is Void Busts?",
-    answer: "Void Busts is a 1,111-piece digital art collection on Solana. Built natively in Adobe Illustrator using high-poly vector geometry, every construct features a custom cryptographic cipher language stamped onto the apparel layers and mapped directly into the smart contract metadata."
+    question: "What is Numb Polys?",
+    answer: "Numb Polys is a premium, 1,111-piece 3D generative digital collection on Solana. Moving away from standard algorithmic noise, every construct is deliberately crafted using custom PBR material shading, low-poly geometry, and exact material matching to create high-end visual identities for Web3 operatives."
   },
   {
     question: "When is the mint and where?",
-    answer: "Mint dates, mint price, and supply metrics will be announced across our official X account (@TheVoidBusts) and Discord. The collection will mint officially on LaunchMyNFT (LMNFT)."
+    answer: "Mint parameters, launch dates, and exact supply metrics will be decrypted across our official X account (@NumbPolys) and Discord. The collection will be deployed natively on the Solana network."
   },
   {
-    question: "How do I get an Operator (Whitelist) spot?",
-    answer: "We do not run generic whitelist lotteries. Operator spots are vetted directly through active community involvement, cipher decoding challenges on X, and high-signal Discord intake."
+    question: "How do I get Syndicate Clearance (Whitelist)?",
+    answer: "We do not run generic lotteries. Syndicate clearance is vetted directly through high-signal ecosystem involvement, active network contribution, and deliberate Discord intake."
   },
   {
-    question: "What chain is Void Busts deployed on?",
-    answer: "Void Busts is deployed natively on the Solana blockchain for instant finality, low transaction costs, and seamless marketplace integration."
+    question: "What chain is Numb Polys deployed on?",
+    answer: "Numb Polys is deployed natively on the Solana blockchain for instant finality, low transaction costs, and seamless underworld marketplace execution."
   },
   {
-    question: "What is the Cipher & Vault utility?",
-    answer: "Every construct carries a unique geometric rune from our custom alphabet. Holders receive full commercial IP rights, access to raw scalable vector files, and the ability to decode their apparel glyphs to unlock staking multipliers inside the Vault ecosystem."
+    question: "What is the utility?",
+    answer: "Every holder receives full commercial IP rights and exclusive access to gated syndicate channels based on their precise Rarity Tier (Civilian through Kingpin). Active operators will also gain classified access to future independent Web3 infrastructure currently being built in the shadows."
   }
 ];
 
@@ -41,33 +41,33 @@ export default function RoadmapFAQ() {
           
           {/* THE PLAN / ROADMAP */}
           <div>
-            <h2 className="font-serif italic text-3xl mb-8 tracking-wide text-white">the plan</h2>
+            <h2 className="font-serif italic text-3xl mb-8 tracking-wide text-white">the blueprint</h2>
             
             <div className="space-y-12">
               {/* Phase 01 */}
               <div>
                 <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
-                  PHASE 01 — Protocol Initialization
+                  PHASE 01 — Infiltration
                 </h3>
                 <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide">
                   <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
-                    <span className="text-white">Vector Art Stack & Layer Generation</span>
+                    <span className="text-white">3D Asset & Layer Generation</span>
                     <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
-                    <span className="text-white">Smart Contract & JSON Cipher Mapping</span>
+                    <span className="text-white">Smart Contract & Tier Matrix</span>
+                    <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
+                  </li>
+                  <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
+                    <span className="text-white">The 1,111 Widescreen Grid Reveal</span>
                     <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-[#b084ff] pl-4">
-                    <span className="text-white">Operator Vetting & Terminal Whitelist</span>
+                    <span className="text-white">Syndicate Recruitment & Clearance</span>
                     <span className="text-[#b084ff] bg-[#b084ff]/20 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[LIVE]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4 text-neutral-400">
-                    <span>Featured Launchpad Deployment (LMNFT)</span>
-                    <span className="text-[10px] sm:text-xs">[SOON]</span>
-                  </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4 text-neutral-400">
-                    <span>1,111 Construct Mint</span>
+                    <span>1,111 Construct Mint Protocol</span>
                     <span className="text-[10px] sm:text-xs">[TBA]</span>
                   </li>
                 </ul>
@@ -76,32 +76,45 @@ export default function RoadmapFAQ() {
               {/* Phase 02 */}
               <div>
                 <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
-                  PHASE 02 — The Vault & Cipher Matrix
+                  PHASE 02 — Consolidation
                 </h3>
                 <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide text-neutral-400">
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
-                    <span>Master Key Release & Cipher Matrix</span>
+                    <span>Treasury Protocol Activation</span>
                     <span className="text-[10px] sm:text-xs">[SOON]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
-                    <span>Vault Activation & Staking Multipliers</span>
+                    <span>Solana Ecosystem Partnerships</span>
                     <span className="text-[10px] sm:text-xs">[SOON]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
-                    <span>Holder Access: Raw High-Res Vector Assets</span>
+                    <span>Tier-Based Holder Classification</span>
                     <span className="text-[10px] sm:text-xs">[SOON]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
                     <span>Commercial IP Rights Unlocked</span>
                     <span className="text-[10px] sm:text-xs">[SOON]</span>
                   </li>
+                </ul>
+              </div>
+              
+              {/* Phase 03 */}
+              <div>
+                <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
+                  PHASE 03 — The Unknown
+                </h3>
+                <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide text-neutral-400">
                   <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
-                    <span>Grid Expansion & Sub-Terminal Artifacts</span>
-                    <span className="text-[10px] sm:text-xs">[TBA]</span>
+                    <span>[REDACTED] Independent Infrastructure</span>
+                    <span className="text-[10px] sm:text-xs">[CLASSIFIED]</span>
+                  </li>
+                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                    <span>[REDACTED] Expansion Directives</span>
+                    <span className="text-[10px] sm:text-xs">[CLASSIFIED]</span>
                   </li>
                 </ul>
                 <p className="font-mono text-[10px] text-neutral-500 mt-6 lowercase tracking-widest">
-                  operators find out first_
+                  active operators decrypt first_
                 </p>
               </div>
             </div>
@@ -109,38 +122,22 @@ export default function RoadmapFAQ() {
 
           {/* THE TEAM */}
           <div>
-            <h2 className="font-serif italic text-3xl mb-4 tracking-wide text-white">the team</h2>
+            <h2 className="font-serif italic text-3xl mb-4 tracking-wide text-white">the syndicate</h2>
             <p className="text-neutral-300 text-sm leading-relaxed mb-8 max-w-lg">
-              Built by Void Architects. Void Busts is engineered solely by Nuele bringing 1,111 high-poly vector constructs and on-chain cryptographic mechanics natively to the Solana network.
+              Operating in the shadows. Numb Polys is architected solely by Nuele, executing high-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Solana network.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Card 1 */}
               <div className="border border-white/10 bg-black/40 backdrop-blur-md p-6 hover:border-white/30 transition-colors flex items-center gap-5">
-                {/* Image Placeholder - Update src path */}
                 <div className="flex-shrink-0">
-                  <img src="/assets/Promo_Bust_006.png" alt="Nuele" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
+                  <img src="/assets/mythic_nuele.png" alt="Nuele / Osso" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
                 </div>
                 <div>
-                  <p className="font-serif text-2xl mb-1 text-white">Nuele</p>
-                  <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Founder & Lead Architect</p>
+                  <p className="font-serif text-2xl mb-1 text-white">Nuele / Osso</p>
+                  <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Creator & Lead Architect</p>
                   <a href="https://x.com/Nue1e" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-[#b084ff] hover:text-white transition-colors block">
-                    𝕏 @Nuele
-                  </a>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="border border-white/10 bg-black/40 backdrop-blur-md p-6 hover:border-white/30 transition-colors flex items-center gap-5">
-                {/* Image Placeholder for Mystery Partner */}
-                <div className="flex-shrink-0">
-                  <img src="/assets/Promo_Bust_008.png" alt="?" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
-                </div>
-                <div>
-                  <p className="font-serif text-2xl mb-1 text-white">?</p>
-                  <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Operations & Community</p>
-                  <a href="#" className="font-mono text-xs text-[#b084ff] hover:text-white transition-colors block cursor-default">
-                    𝕏 @?
+                    𝕏 @Nue1e
                   </a>
                 </div>
               </div>
