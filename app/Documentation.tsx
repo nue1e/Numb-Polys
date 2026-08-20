@@ -11,7 +11,7 @@ export default function Documentation() {
             SYSTEM CONFIGURATION: COMPREHENSIVE PROTOCOL ARCHIVE
           </p>
           <p className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-neutral-400 uppercase mb-6">
-            SECURITY CLASSIFICATION: LEVEL O-1 (SYNDICATE CORE) // SOLANA MAINNET
+            SECURITY CLASSIFICATION: LEVEL O-1 (SYNDICATE CORE) // SUI MAINNET
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold uppercase tracking-wider">
              THE NUMB POLYS CORE SPECIFICATION 
@@ -84,7 +84,7 @@ export default function Documentation() {
             
             <div className="p-6 bg-neutral-950/80 border border-neutral-800 space-y-2 hover:border-white/30 transition-colors">
               <h4 className="text-white font-bold uppercase">3. Treasury Protocol</h4>
-              <p>Activation of the syndicate treasury to forge high-value alliances and cement our presence within the broader Solana ecosystem.</p>
+              <p>Activation of the syndicate treasury to forge high-value alliances and cement our presence within the broader Sui ecosystem.</p>
             </div>
             
             <div className="p-6 bg-neutral-950/80 border border-[#b084ff]/50 space-y-2 hover:border-[#b084ff] transition-colors shadow-[0_0_15px_rgba(176,132,255,0.05)]">

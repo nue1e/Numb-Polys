@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <span className="text-white font-bold tracking-widest">© NUMB POLYS 2026</span>
           <span className="hidden sm:inline text-neutral-700">//</span>
-          <span className="text-neutral-500 tracking-wider">SOLANA MAINNET ACTIVE</span>
+          <span className="text-neutral-500 tracking-wider">SUI MAINNET ACTIVE</span>
         </div>
 
         {/* Right: X & Discord Social Icons */}
