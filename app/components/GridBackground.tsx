@@ -9,7 +9,7 @@ const vertexShader = `
   varying vec2 vUv;
   uniform vec2 uScale;
   
-  Numb main() {
+  void main() {
     // Multiply the uv by uScale to fix the squishing and maintain perfect squares
     vUv = uv * uScale; 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
@@ -23,7 +23,7 @@ const fragmentShader = `
   uniform vec2 uScale;
   varying vec2 vUv;
 
-  Numb main() {
+  void main() {
     // 1. INFINITE PANNING
     vec2 panningUv = vUv + vec2(uTime * 0.05, uTime * 0.03);
     
@@ -58,7 +58,7 @@ export default function GridBackground() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const { viewport } = useThree();
   
-  const texture = useTexture('/assets/grid_1111.png') as THREE.Texture;
+  const texture = useTexture('/assets/grid.webp') as THREE.Texture;
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
   // Initialize mouse off-screen so the warp doesn't start in the dead center

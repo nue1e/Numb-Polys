@@ -131,10 +131,10 @@ export default function RoadmapFAQ() {
               {/* Card 1 */}
               <div className="border border-white/10 bg-black/40 backdrop-blur-md p-6 hover:border-white/30 transition-colors flex items-center gap-5">
                 <div className="flex-shrink-0">
-                  <img src="/assets/mythic_nuele.png" alt="Nuele / Osso" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
+                  <img src="/assets/68.png" alt="Nuele" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
                 </div>
                 <div>
-                  <p className="font-serif text-2xl mb-1 text-white">Nuele / Osso</p>
+                  <p className="font-serif text-2xl mb-1 text-white">Nuele </p>
                   <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Creator & Lead Architect</p>
                   <a href="https://x.com/Nue1e" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-[#b084ff] hover:text-white transition-colors block">
                     𝕏 @Nue1e

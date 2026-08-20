@@ -12,7 +12,7 @@ const traits = [
     title: 'THE ANOMALIES',
     description: 'CUSTOM 1-OF-1 GRAILS FEATURING HANDCRAFTED MESH EDITS, EXCLUSIVE SHADERS, AND UNIQUE ASSET BUILDS. LED BY THE GOLDEN RUNNER.',
     tag: '11 UNITS',
-    imageUrl: '/assets/mythic_placeholder.png',
+    imageUrl: '/assets/1102.png',
   },
   {
     id: '02',
@@ -20,7 +20,7 @@ const traits = [
     title: 'THE APEX',
     description: 'THE ELITE OPERATORS OF THE SYNDICATE. EQUIPPED WITH EXCLUSIVE IRIDESCENT SKINS, OIL SLICKS, AND GOLD-VEINED MARBLES TO DICTATE THE UNDERWORLD.',
     tag: '55 UNITS',
-    imageUrl: '/assets/legendary_placeholder.png',
+    imageUrl: '/assets/36.png',
   },
   {
     id: '03',
@@ -28,7 +28,7 @@ const traits = [
     title: 'PHANTOM CLASS',
     description: 'HIGH-COMPLEXITY PATTERNS, SOLAR GRIDS, AND BIOLUMINESCENT SKINS DESIGNED FOR STEALTH, HIGH-STAKES INFILTRATION, AND ZERO-TRACE TACTICS.',
     tag: '110 UNITS',
-    imageUrl: '/assets/epic_placeholder.png',
+    imageUrl: '/assets/13.png',
   },
   {
     id: '04',
@@ -36,7 +36,7 @@ const traits = [
     title: 'TACTICAL HEAVY',
     description: 'HARDENED CONSTRUCTS FORGED WITH PURE METALS, COPPER, AND CHAMPAGNE GOLD. THE METHODICAL ENFORCERS OF THE GRID.',
     tag: '220 UNITS',
-    imageUrl: '/assets/rare_placeholder.png',
+    imageUrl: '/assets/3.png',
   },
   {
     id: '05',
@@ -44,7 +44,7 @@ const traits = [
     title: 'FIELD OPERATIVE',
     description: 'METHODICAL UNITS FEATURING DARK BRONZES, SILVERS, AND VANTABLACK BASES. THE ACTIVE DATA ROUTERS AND GROUND FORCES OF THE NETWORK.',
     tag: '330 UNITS',
-    imageUrl: '/assets/uncommon_placeholder.png',
+    imageUrl: '/assets/7.png',
   },
   {
     id: '06',
@@ -52,7 +52,7 @@ const traits = [
     title: 'STANDARD ISSUE',
     description: 'SMOOTH, MATTE CLAYS AND EARTH TONES. CLEAN, MINIMALIST BUILDS FORMING THE FOUNDATIONAL ROSTER OF THE SYNDICATE.',
     tag: '385 UNITS',
-    imageUrl: '/assets/common_placeholder.png',
+    imageUrl: '/assets/4.png',
   },
 ];
 
