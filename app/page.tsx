@@ -87,7 +87,7 @@ export default function Home() {
             textTransform: 'uppercase',
             lineHeight: '1.6'
           }}>
-           1,111 HIGH-POLY TACTICAL CONSTRUCTS SECURED OFF THE GRID. THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE LEVEL.
+           1,111 LOW-POLY TACTICAL CONSTRUCTS SECURED OFF THE GRID. THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE LEVEL.
 </p>
         </div>
 

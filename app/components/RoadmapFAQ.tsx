@@ -124,7 +124,7 @@ export default function RoadmapFAQ() {
           <div>
             <h2 className="font-serif italic text-3xl mb-4 tracking-wide text-white">the syndicate</h2>
             <p className="text-neutral-300 text-sm leading-relaxed mb-8 max-w-lg">
-              Operating in the shadows. Numb Polys is architected solely by Nuele, executing high-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Sui network.
+              Operating in the shadows. Numb Polys is architected solely by Nuele, executing Low-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Sui network.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
