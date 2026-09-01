@@ -93,21 +93,26 @@ export default function Home() {
 
         {/* NAVIGATION */}
         <nav className="absolute top-0 w-full z-10 grid grid-cols-3 items-center px-4 sm:px-8 py-6 box-border">
-          {/* Left balance column */}
-          <div></div>
+  {/* Left balance column */}
+  <div></div>
 
-          {/* Center Logo Crest (True absolute grid centering, never covered) */}
-          <div className="flex justify-center items-center">
-            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="w-8 h-8 object-contain" />
-          </div>
+  {/* Center Logo Crest */}
+  <div className="flex justify-center items-center">
+    <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-8 w-auto" />
+  </div>
 
-          {/* Top-Right Mint Button */}
-          <div className="flex justify-end">
-            <a href="#" className="font-mono text-[9px] sm:text-xs uppercase tracking-widest text-white border border-neutral-800 bg-black/60 px-3 sm:px-4 py-2 hover:border-white transition-colors block whitespace-nowrap">
-              Mint A Poly
-            </a>
-          </div>
-        </nav>
+  {/* Top-Right Mint Button */}
+  <div className="flex justify-end">
+    <a 
+      href="https://testnet.numbpolys.xyz" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="font-mono text-[9px] sm:text-xs uppercase tracking-widest text-white border border-neutral-800 bg-black/60 px-3 sm:px-4 py-2 hover:border-white transition-colors block whitespace-nowrap"
+    >
+      Mint A Test Poly
+    </a>
+  </div>
+</nav>
 
         {/* HERO FOOTER */}
         <footer style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '2rem', boxSizing: 'border-box' }}>
