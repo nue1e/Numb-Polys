@@ -20,22 +20,50 @@ const fragmentShader = `
   uniform float uHover;
   varying vec2 vUv;
 
+  // Pseudo-random noise for glitch artifacts
+  float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+  }
+
   void main() {
     vec2 uv = vUv;
     
-    float idleWaveX = sin(uv.y * 10.0 + uTime * 1.5) * 0.003;
-    float idleWaveY = cos(uv.x * 10.0 + uTime * 1.5) * 0.003;
-    vec2 idleDistortion = vec2(idleWaveX, idleWaveY);
-
+    // 1. LOCALIZED CURSOR TRACKING
+    // Calculate distance between the current pixel and the mouse coordinates
     float dist = distance(uv, uMouse);
-    float rippleArea = smoothstep(0.4, 0.0, dist) * uHover;
-    float hoverWave = sin(dist * 30.0 - uTime * 4.0) * 0.015 * rippleArea;
-    vec2 hoverDistortion = normalize(uv - uMouse) * hoverWave;
+    // Create a concentrated radius of effect that only triggers heavily on hover
+    float hoverForce = smoothstep(0.4, 0.0, dist) * uHover;
+
+    // 2. HORIZONTAL DATA TEARING
+    // Slice the logo into digital bands
+    float band = floor(uv.y * 12.0);
+    // Rapidly randomize tear activation over time
+    float tearForce = random(vec2(band, floor(uTime * 15.0)));
+    // Only tear if the random value hits a high threshold, scaled by cursor proximity
+    float tearOffset = step(0.85, tearForce) * 0.04 * hoverForce;
     
-    vec2 distortedUv = uv + idleDistortion + hoverDistortion;
+    // Shift UVs left or right based on the band to create the jagged split
+    uv.x += (mod(band, 2.0) == 0.0 ? tearOffset : -tearOffset);
+
+    // 3. CHROMATIC ABERRATION (RGB SPLIT)
+    // Decouple the red and blue channels heavily around the cursor
+    float splitAmount = 0.015 * hoverForce + (tearOffset * 0.5);
     
-    vec4 tex = texture2D(uTexture, distortedUv);
-    gl_FragColor = tex;
+    vec4 texR = texture2D(uTexture, uv + vec2(splitAmount, 0.0));
+    vec4 texG = texture2D(uTexture, uv);
+    vec4 texB = texture2D(uTexture, uv - vec2(splitAmount, 0.0));
+    
+    // Maintain the original alpha channel so the background stays transparent
+    float alpha = texG.a;
+    vec3 baseColor = vec3(texR.r, texG.g, texB.b);
+
+    // 4. CRT SCANLINES & PHOSPHOR GLOW
+    // Subtle horizontal raster lines mapped across the logo
+    float scanlines = sin(uv.y * 400.0) * 0.03;
+    // Shift the color matrix toward terminal green where the cursor interacts
+    vec3 terminalGlow = mix(baseColor, baseColor * vec3(0.5, 1.5, 0.5), hoverForce * 0.6);
+    
+    gl_FragColor = vec4(terminalGlow - scanlines, alpha);
   }
 `;
 
@@ -47,24 +75,21 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
   const mouseRef = useRef(new THREE.Vector2(0.5, 0.5));
   const targetMouse = useRef(new THREE.Vector2(0.5, 0.5));
 
-  // useThree gives us the exact dimensions of the 3D viewport
   const { viewport } = useThree();
-
-  // The base width of your logo is 10 units. 
-  // We want to ensure it never takes up more than 90% of the screen width (0.9 padding).
-  // Math.min(1, ...) ensures it doesn't scale UP larger than its original size on big desktops.
   const scaleFactor = Math.min(1, (viewport.width * 0.9) / 10);
 
   useFrame((state) => {
     if (materialRef.current) {
       materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
       
+      // Increased lerp speed (0.05 -> 0.15) for a snappier digital activation
       materialRef.current.uniforms.uHover.value = THREE.MathUtils.lerp(
         materialRef.current.uniforms.uHover.value,
         hovered ? 1.0 : 0.0,
-        0.05
+        0.15
       );
 
+      // Mouse tracking lerp
       mouseRef.current.lerp(targetMouse.current, 0.1);
       materialRef.current.uniforms.uMouse.value = mouseRef.current;
     }
@@ -72,8 +97,6 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
 
   return (
     <mesh
-      // We apply the dynamic scale here to the mesh. 
-      // It perfectly shrinks the width and height together on smaller screens!
       scale={[scaleFactor, scaleFactor, 1]}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
@@ -83,7 +106,6 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
         }
       }}
     >
-      {/* We keep the original desktop geometry size constant */}
       <planeGeometry args={[10, 1.2, 64, 64]} />
       <shaderMaterial
         ref={materialRef}

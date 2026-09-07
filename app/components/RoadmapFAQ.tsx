@@ -33,7 +33,7 @@ export default function RoadmapFAQ() {
   };
 
   return (
-    <section className="bg-transparent text-white w-full py-24 px-6 sm:px-12 lg:px-24 border-t border-white/10 relative z-10">
+    <section className="bg-transparent text-white w-full py-24 px-6 sm:px-12 lg:px-24 border-t border-[#00ff00]/10 relative z-10 font-mono">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
         
         {/* LEFT COLUMN: THE PLAN & TEAM */}
@@ -41,80 +41,82 @@ export default function RoadmapFAQ() {
           
           {/* THE PLAN / ROADMAP */}
           <div>
-            <h2 className="font-serif italic text-3xl mb-8 tracking-wide text-white">the blueprint</h2>
+            <h2 className="text-xl sm:text-2xl mb-8 tracking-widest text-[#00ff00] uppercase drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]">
+              // THE BLUEPRINT
+            </h2>
             
             <div className="space-y-12">
               {/* Phase 01 */}
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
-                  PHASE 01 — Infiltration
+                <h3 className="text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-[#00ff00]/20 pb-2">
+                  PHASE 01 — INFILTRATION
                 </h3>
-                <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide">
-                  <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
-                    <span className="text-white">3D Asset & Layer Generation</span>
-                    <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
+                <ul className="space-y-4 text-xs sm:text-sm tracking-wide">
+                  <li className="flex justify-between items-center border-l-2 border-[#00ff00]/40 pl-4">
+                    <span className="text-neutral-200">3D Asset & Layer Generation</span>
+                    <span className="text-[#00ff00] bg-[#00ff00]/10 border border-[#00ff00]/30 px-2 py-1 text-[10px] sm:text-xs">[ DONE ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
-                    <span className="text-white">Smart Contract & Tier Matrix</span>
-                    <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
+                  <li className="flex justify-between items-center border-l-2 border-[#00ff00]/40 pl-4">
+                    <span className="text-neutral-200">Smart Contract & Tier Matrix</span>
+                    <span className="text-[#00ff00] bg-[#00ff00]/10 border border-[#00ff00]/30 px-2 py-1 text-[10px] sm:text-xs">[ DONE ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/20 pl-4">
-                    <span className="text-white">The 1,111 Widescreen Grid Reveal</span>
-                    <span className="text-white bg-white/10 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[DONE]</span>
+                  <li className="flex justify-between items-center border-l-2 border-[#00ff00]/40 pl-4">
+                    <span className="text-neutral-200">The 1,111 Widescreen Grid Reveal</span>
+                    <span className="text-[#00ff00] bg-[#00ff00]/10 border border-[#00ff00]/30 px-2 py-1 text-[10px] sm:text-xs">[ DONE ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-[#b084ff] pl-4">
-                    <span className="text-white">Syndicate Recruitment & Clearance</span>
-                    <span className="text-[#b084ff] bg-[#b084ff]/20 backdrop-blur-sm px-2 py-1 text-[10px] sm:text-xs">[LIVE]</span>
+                  <li className="flex justify-between items-center border-l-2 border-[#00ff00] pl-4">
+                    <span className="text-white font-bold drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">Syndicate Recruitment & Clearance</span>
+                    <span className="text-[#050505] bg-[#00ff00] px-2 py-1 text-[10px] sm:text-xs font-bold animate-pulse">[ LIVE ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4 text-neutral-400">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4 text-neutral-500">
                     <span>1,111 Construct Mint Protocol</span>
-                    <span className="text-[10px] sm:text-xs">[TBA]</span>
+                    <span className="text-[10px] sm:text-xs">[ TBA ]</span>
                   </li>
                 </ul>
               </div>
 
               {/* Phase 02 */}
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
-                  PHASE 02 — Consolidation
+                <h3 className="text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-[#00ff00]/20 pb-2">
+                  PHASE 02 — CONSOLIDATION
                 </h3>
-                <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide text-neutral-400">
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                <ul className="space-y-4 text-xs sm:text-sm tracking-wide text-neutral-500">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>Treasury Protocol Activation</span>
-                    <span className="text-[10px] sm:text-xs">[SOON]</span>
+                    <span className="text-[10px] sm:text-xs">[ SOON ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>Sui Ecosystem Partnerships</span>
-                    <span className="text-[10px] sm:text-xs">[SOON]</span>
+                    <span className="text-[10px] sm:text-xs">[ SOON ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>Tier-Based Holder Classification</span>
-                    <span className="text-[10px] sm:text-xs">[SOON]</span>
+                    <span className="text-[10px] sm:text-xs">[ SOON ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>Commercial IP Rights Unlocked</span>
-                    <span className="text-[10px] sm:text-xs">[SOON]</span>
+                    <span className="text-[10px] sm:text-xs">[ SOON ]</span>
                   </li>
                 </ul>
               </div>
               
               {/* Phase 03 */}
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-white/10 pb-2">
-                  PHASE 03 — The Unknown
+                <h3 className="text-sm uppercase tracking-widest text-neutral-400 mb-6 border-b border-[#00ff00]/20 pb-2">
+                  PHASE 03 — THE UNKNOWN
                 </h3>
-                <ul className="space-y-4 font-mono text-xs sm:text-sm tracking-wide text-neutral-400">
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                <ul className="space-y-4 text-xs sm:text-sm tracking-wide text-neutral-500">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>[REDACTED] Independent Infrastructure</span>
-                    <span className="text-[10px] sm:text-xs">[CLASSIFIED]</span>
+                    <span className="text-[#00ff00]/50 text-[10px] sm:text-xs">[ CLASSIFIED ]</span>
                   </li>
-                  <li className="flex justify-between items-center border-l-2 border-white/10 pl-4">
+                  <li className="flex justify-between items-center border-l-2 border-neutral-800 pl-4">
                     <span>[REDACTED] Expansion Directives</span>
-                    <span className="text-[10px] sm:text-xs">[CLASSIFIED]</span>
+                    <span className="text-[#00ff00]/50 text-[10px] sm:text-xs">[ CLASSIFIED ]</span>
                   </li>
                 </ul>
-                <p className="font-mono text-[10px] text-neutral-500 mt-6 lowercase tracking-widest">
-                  active operators decrypt first_
+                <p className="text-[10px] text-[#00ff00] mt-6 lowercase tracking-widest opacity-70">
+                  &gt; active operators decrypt first_
                 </p>
               </div>
             </div>
@@ -122,22 +124,25 @@ export default function RoadmapFAQ() {
 
           {/* THE TEAM */}
           <div>
-            <h2 className="font-serif italic text-3xl mb-4 tracking-wide text-white">the syndicate</h2>
-            <p className="text-neutral-300 text-sm leading-relaxed mb-8 max-w-lg">
+            <h2 className="text-xl sm:text-2xl mb-4 tracking-widest text-[#00ff00] uppercase drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]">
+              // THE SYNDICATE
+            </h2>
+            <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-8 max-w-lg">
               Operating in the shadows. Numb Polys is architected solely by Nuele, executing Low-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Sui network.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Card 1 */}
-              <div className="border border-white/10 bg-black/40 backdrop-blur-md p-6 hover:border-white/30 transition-colors flex items-center gap-5">
-                <div className="flex-shrink-0">
-                  <img src="/assets/68.png" alt="Nuele" className="w-14 h-14 rounded-full object-cover border border-white/20 grayscale hover:grayscale-0 transition-all duration-300" />
+              <div className="border border-[#00ff00]/20 bg-[#050505] p-6 hover:border-[#00ff00] hover:shadow-[0_0_15px_rgba(0,255,0,0.15)] transition-all flex items-center gap-5 group cursor-default">
+                <div className="flex-shrink-0 relative">
+                  <div className="absolute inset-0 border border-[#00ff00] scale-110 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <img src="/assets/68.png" alt="Nuele" className="w-14 h-14 object-cover border border-[#00ff00]/30 grayscale group-hover:grayscale-0 transition-all duration-300" />
                 </div>
                 <div>
-                  <p className="font-serif text-2xl mb-1 text-white">Nuele </p>
-                  <p className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Creator & Lead Architect</p>
-                  <a href="https://x.com/Nue1e" target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-[#b084ff] hover:text-white transition-colors block">
-                    𝕏 @Nue1e
+                  <p className="text-lg mb-1 text-white group-hover:text-[#00ff00] transition-colors uppercase">Nuele </p>
+                  <p className="text-[9px] text-neutral-500 uppercase tracking-widest mb-2">Creator & Lead Architect</p>
+                  <a href="https://x.com/Nue1e" target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#00ff00] hover:text-white transition-colors block">
+                    [ 𝕏 @Nue1e ]
                   </a>
                 </div>
               </div>
@@ -148,30 +153,32 @@ export default function RoadmapFAQ() {
         {/* RIGHT COLUMN: FAQ ACCORDION */}
         <div className="lg:col-span-5">
           <div className="sticky top-24">
-            <h2 className="font-serif italic text-3xl mb-8 tracking-wide text-white">intel</h2>
+            <h2 className="text-xl sm:text-2xl mb-8 tracking-widest text-[#00ff00] uppercase drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]">
+              // INTEL
+            </h2>
             
-            <div className="border-t border-white/10">
+            <div className="border-t border-[#00ff00]/20">
               {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-white/10">
+                <div key={index} className="border-b border-[#00ff00]/20">
                   <button 
                     onClick={() => toggleFAQ(index)}
-                    className="w-full py-6 flex justify-between items-center text-left focus:outline-none group"
+                    className="w-full py-6 flex justify-between items-center text-left focus:outline-none group hover:bg-[#00ff00]/5 px-4 -mx-4 transition-colors"
                   >
-                    <span className={`font-mono text-sm tracking-wide transition-colors ${openFAQ === index ? 'text-white' : 'text-neutral-400 group-hover:text-neutral-200'}`}>
-                      {index + 1}. {faq.question}
+                    <span className={`text-xs sm:text-sm tracking-wide transition-colors ${openFAQ === index ? 'text-[#00ff00]' : 'text-neutral-400 group-hover:text-neutral-200'}`}>
+                      {String(index + 1).padStart(2, '0')}. {faq.question}
                     </span>
-                    <span className="font-mono text-lg text-neutral-500 ml-4 group-hover:text-white transition-colors">
-                      {openFAQ === index ? '−' : '+'}
+                    <span className={`text-lg transition-colors ${openFAQ === index ? 'text-[#00ff00]' : 'text-neutral-600 group-hover:text-[#00ff00]'}`}>
+                      {openFAQ === index ? '[ - ]' : '[ + ]'}
                     </span>
                   </button>
                   
                   {/* Expandable Content */}
                   <div 
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    className={`overflow-hidden transition-all duration-300 ease-in-out px-4 -mx-4 ${
                       openFAQ === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <p className="text-neutral-300 text-sm leading-relaxed pr-4">
+                    <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed pr-4">
                       {faq.answer}
                     </p>
                   </div>
