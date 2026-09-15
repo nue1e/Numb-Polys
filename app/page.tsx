@@ -69,19 +69,23 @@ export default function Home() {
       <div style={{ position: 'relative', width: '100%', height: '100dvh', zIndex: 10, display: 'flex', flexDirection: 'column' }}>
         
         {/* NAVIGATION */}
-        <nav className="w-full grid grid-cols-3 items-center px-4 sm:px-8 py-6 box-border relative z-20">
-          <div></div>
+        <nav className="absolute top-0 w-full z-20 flex justify-between items-center px-4 sm:px-8 py-5 box-border">
           
-          <div className="flex justify-center items-center">
-            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-8 w-auto filter drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]" />
+          {/* 1. Left side (Empty, but keeps the flex layout balanced) */}
+          <div className="w-1/3"></div>
+
+          {/* 2. Center Logo Crest (TRUE Absolute Centering - impossible to be covered) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-6 w-auto sm:h-8 filter drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]" />
           </div>
 
-          <div className="flex justify-end">
+          {/* 3. Top-Right Mint/Testnet Button */}
+          <div className="flex justify-end w-[60%] sm:w-1/3">
             <a 
               href="https://testnet.numbpolys.xyz" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="terminal-btn font-mono text-[10px] sm:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap"
+              className="terminal-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-2 py-1.5 sm:px-4 sm:py-2 block whitespace-nowrap"
             >
               [ INITIATE TESTNET ]
             </a>
@@ -145,6 +149,7 @@ export default function Home() {
             </a>
           </div>
         </footer>
+
       </div>
 
       {/* CONTENT SECTIONS */}
