@@ -153,8 +153,8 @@ export default function Home() {
       </div>
 
       {/* CONTENT SECTIONS */}
-      {/* The background here is slightly opaque black to let the 3D grid faintly show through while keeping text readable */}
-      <div style={{ position: 'relative', zIndex: 20, backgroundColor: 'rgba(5, 5, 5, 0.95)', backdropFilter: 'blur(10px)', borderTop: '1px solid rgba(0,255,0,0.1)' }}>
+      {/* FIX: Removed backdropFilter because it breaks GSAP ScrollTrigger pinning */}
+      <div style={{ position: 'relative', zIndex: 20, backgroundColor: 'rgba(5, 5, 5, 0.95)', borderTop: '1px solid rgba(0,255,0,0.1)' }}>
         
         <div style={{ padding: '4rem 0' }}>
           <TraitGallery />
