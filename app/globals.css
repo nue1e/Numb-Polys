@@ -1,95 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bayc-bg: transparent;
-  --bayc-text: #ffffff;
-  --bayc-gray: #7a7a7a;
+  /* ARC PREMIUM SYNDICATE PALETTE */
+  --arc-bg: #0D0D11;
+  --arc-text: #E5E5E5;
+  --arc-muted: #A3A3A3;
+  --arc-cyan: #06B6D4;
+  --arc-indigo: #4F46E5;
+  --arc-violet: #8B5CF6;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #050505;
-  color: var(--bayc-text);
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  background-color: var(--arc-bg);
+  color: var(--arc-text);
+  /* Uses the Next.js Geist font we set up in layout.tsx */
+  font-family: var(--font-geist-sans), sans-serif;
+  /* Prevent horizontal scrollbars that can break 3D canvases */
+  max-width: 100%;
   overflow-x: hidden;
-  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: var(--bayc-text);
+  color: var(--arc-text);
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--bayc-gray);
+  color: var(--arc-cyan);
 }
 
-.hero-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+/* ARC THEMED SELECTION HIGHLIGHT */
+::selection {
+  background-color: var(--arc-indigo);
+  color: #ffffff;
 }
 
-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  pointer-events: auto;
+/* PREMIUM CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 30px;
+::-webkit-scrollbar-track {
+  background: var(--arc-bg);
 }
 
-.nav-center-icon {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: var(--bayc-text);
-  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>') no-repeat center / contain;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>') no-repeat center / contain;
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  color: var(--bayc-gray);
-  pointer-events: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.footer-links {
-  display: flex;
-  gap: 30px;
-}
+/* 
+  NOTE: We removed the hardcoded .hero-section, nav, and footer classes 
+  because we successfully rebuilt them using dynamic Tailwind classes inside page.tsx! 
+*/

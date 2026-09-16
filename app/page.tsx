@@ -23,7 +23,7 @@ export default function Home() {
       } else if (width > 640 && width <= 1024) {
         setLogoScale(0.75); 
       } else {
-        setLogoScale(0.55); // Slightly bumped from 0.5 to keep mobile impact high
+        setLogoScale(0.55);
       }
     };
 
@@ -36,24 +36,25 @@ export default function Home() {
   if (!isMounted) return null;
 
   return (
-    <div style={{ backgroundColor: '#050505', minHeight: '100vh', color: '#fff', fontFamily: 'monospace' }}>
+    <div style={{ backgroundColor: '#0D0D11', minHeight: '100vh', color: '#E5E5E5', fontFamily: 'var(--font-geist-sans), sans-serif' }}>
       
-      {/* GLOBAL CSS INJECTION FOR TERMINAL BUTTONS */}
+      {/* GLOBAL CSS INJECTION FOR PREMIUM BUTTONS */}
       <style>{`
-        .terminal-btn {
-          background-color: rgba(10, 10, 10, 0.8);
-          border: 1px solid #00ff00;
-          color: #00ff00;
-          text-shadow: 0 0 5px rgba(0,255,0,0.5);
-          box-shadow: 0 0 8px rgba(0, 255, 0, 0.15);
-          transition: all 0.2s ease;
+        .premium-btn {
+          background-color: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #E5E5E5;
+          backdrop-filter: blur(8px);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .terminal-btn:hover {
-          background-color: rgba(0, 255, 0, 0.1);
-          box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+        .premium-btn:hover {
+          background-color: #E5E5E5;
+          color: #0D0D11;
+          border-color: #E5E5E5;
+          transform: translateY(-1px);
         }
         .scroll-fade {
-          background: linear-gradient(to bottom, transparent, rgba(5,5,5,1));
+          background: linear-gradient(to bottom, transparent, rgba(13,13,17,1));
         }
       `}</style>
 
@@ -71,23 +72,20 @@ export default function Home() {
         {/* NAVIGATION */}
         <nav className="absolute top-0 w-full z-20 flex justify-between items-center px-4 sm:px-8 py-5 box-border">
           
-          {/* 1. Left side (Empty, but keeps the flex layout balanced) */}
           <div className="w-1/3"></div>
 
-          {/* 2. Center Logo Crest (TRUE Absolute Centering - impossible to be covered) */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-6 w-auto sm:h-8 filter drop-shadow-[0_0_8px_rgba(0,255,0,0.3)]" />
+            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-6 w-auto sm:h-8 opacity-90" />
           </div>
 
-          {/* 3. Top-Right Mint/Testnet Button */}
           <div className="flex justify-end w-[60%] sm:w-1/3">
             <a 
-              href="https://testnet.numbpolys.xyz" 
+              href="##" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="terminal-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-2 py-1.5 sm:px-4 sm:py-2 block whitespace-nowrap"
+              className="premium-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap rounded-sm"
             >
-              [ INITIATE TESTNET ]
+              Mint Portal
             </a>
           </div>
         </nav>
@@ -115,35 +113,35 @@ export default function Home() {
           pointerEvents: 'none'
         }}>
           <p style={{ 
-            fontFamily: 'monospace', 
             fontSize: '11px', 
-            letterSpacing: '2px', 
-            color: '#a3a3a3',
+            letterSpacing: '0.15em', 
+            color: '#A3A3A3',
             textTransform: 'uppercase',
             lineHeight: '1.8',
-            textShadow: '0 2px 4px rgba(0,0,0,0.8)'
           }}>
-            <span style={{ color: '#00ff00' }}>//</span> 1,111 LOW-POLY TACTICAL CONSTRUCTS SECURED OFF THE GRID.<br/>
-            THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE LEVEL.
+            <span style={{ color: '#E5E5E5', opacity: 0.5 }}>|</span> 1,111 HIGH-POLY CONSTRUCTS SECURED ON ARC.<br/>
+            THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE.
           </p>
         </div>
 
         {/* HERO FOOTER & SCROLL ANCHOR */}
         <footer className="scroll-fade" style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '2rem', height: '150px', boxSizing: 'border-box' }}>
-          <div className="font-mono text-xs text-neutral-500">© NUMB_POLYS 2026</div>
+          <div className="font-mono text-[10px] sm:text-xs tracking-widest text-neutral-500">© NUMB POLYS</div>
           
           <div className="flex flex-col items-center gap-4">
-            <div className="animate-bounce text-[#00ff00] text-xs font-mono opacity-70">↓ SCROLL TO DECRYPT ↓</div>
+            <div className="animate-bounce text-[#E5E5E5] text-[10px] sm:text-xs tracking-widest opacity-50 uppercase">
+              Scroll to Explore
+            </div>
           </div>
           
           <div className="footer-links flex items-center gap-5">
-            <a href="https://x.com/numbpolys" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#00ff00] transition-colors" aria-label="X (Twitter)">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <a href="https://x.com/numbpolys" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#E5E5E5] transition-colors" aria-label="X (Twitter)">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
-            <a href="https://discord.gg/uVfu3Vg9Bf" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#00ff00] transition-colors" aria-label="Discord">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <a href="https://discord.gg/uVfu3Vg9Bf" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-[#E5E5E5] transition-colors" aria-label="Discord">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
               </svg>
             </a>
@@ -153,8 +151,7 @@ export default function Home() {
       </div>
 
       {/* CONTENT SECTIONS */}
-      {/* FIX: Removed backdropFilter because it breaks GSAP ScrollTrigger pinning */}
-      <div style={{ position: 'relative', zIndex: 20, backgroundColor: 'rgba(5, 5, 5, 0.95)', borderTop: '1px solid rgba(0,255,0,0.1)' }}>
+      <div style={{ position: 'relative', zIndex: 20, backgroundColor: '#0D0D11', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         
         <div style={{ padding: '4rem 0' }}>
           <TraitGallery />
@@ -168,7 +165,7 @@ export default function Home() {
           <RoadmapFAQ />
         </div>
 
-        <div style={{ borderTop: '1px solid rgba(0,255,0,0.2)' }}>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <Footer />
         </div>
       </div>

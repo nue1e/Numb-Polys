@@ -20,50 +20,63 @@ const fragmentShader = `
   uniform float uHover;
   varying vec2 vUv;
 
-  // Pseudo-random noise for glitch artifacts
-  float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+  // Smooth noise function for liquid glass distortion
+  vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+  vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+  vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+  float snoise(vec2 v) {
+    const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+    vec2 i  = floor(v + dot(v, C.yy) );
+    vec2 x0 = v -   i + dot(i, C.xx);
+    vec2 i1;
+    i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+    vec4 x12 = x0.xyxy + C.xxzz;
+    x12.xy -= i1;
+    i = mod289(i);
+    vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 )) + i.x + vec3(0.0, i1.x, 1.0 ));
+    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+    m = m*m; m = m*m;
+    vec3 x = 2.0 * fract(p * C.www) - 1.0;
+    vec3 h = abs(x) - 0.5;
+    vec3 ox = floor(x + 0.5);
+    vec3 a0 = x - ox;
+    m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+    vec3 g;
+    g.x  = a0.x  * x0.x  + h.x  * x0.y;
+    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+    return 130.0 * dot(m, g);
   }
 
   void main() {
     vec2 uv = vUv;
     
     // 1. LOCALIZED CURSOR TRACKING
-    // Calculate distance between the current pixel and the mouse coordinates
     float dist = distance(uv, uMouse);
-    // Create a concentrated radius of effect that only triggers heavily on hover
-    float hoverForce = smoothstep(0.4, 0.0, dist) * uHover;
+    // Smooth, wider radius for an elegant feel rather than a harsh glitch
+    float hoverForce = smoothstep(0.5, 0.0, dist) * uHover;
 
-    // 2. HORIZONTAL DATA TEARING
-    // Slice the logo into digital bands
-    float band = floor(uv.y * 12.0);
-    // Rapidly randomize tear activation over time
-    float tearForce = random(vec2(band, floor(uTime * 15.0)));
-    // Only tear if the random value hits a high threshold, scaled by cursor proximity
-    float tearOffset = step(0.85, tearForce) * 0.04 * hoverForce;
-    
-    // Shift UVs left or right based on the band to create the jagged split
-    uv.x += (mod(band, 2.0) == 0.0 ? tearOffset : -tearOffset);
+    // 2. LIQUID GLASS DISTORTION
+    // Use simplex noise to gently warp the UVs like moving water
+    float noise = snoise(uv * 3.0 + uTime * 0.5) * 0.05 * hoverForce;
+    uv.x += noise;
+    uv.y += noise * 0.5;
 
-    // 3. CHROMATIC ABERRATION (RGB SPLIT)
-    // Decouple the red and blue channels heavily around the cursor
-    float splitAmount = 0.015 * hoverForce + (tearOffset * 0.5);
+    // 3. PREMIUM CHROMATIC ABERRATION (Subtle RGB Split)
+    float splitAmount = 0.008 * hoverForce;
     
     vec4 texR = texture2D(uTexture, uv + vec2(splitAmount, 0.0));
     vec4 texG = texture2D(uTexture, uv);
     vec4 texB = texture2D(uTexture, uv - vec2(splitAmount, 0.0));
     
-    // Maintain the original alpha channel so the background stays transparent
     float alpha = texG.a;
     vec3 baseColor = vec3(texR.r, texG.g, texB.b);
 
-    // 4. CRT SCANLINES & PHOSPHOR GLOW
-    // Subtle horizontal raster lines mapped across the logo
-    float scanlines = sin(uv.y * 400.0) * 0.03;
-    // Shift the color matrix toward terminal green where the cursor interacts
-    vec3 terminalGlow = mix(baseColor, baseColor * vec3(0.5, 1.5, 0.5), hoverForce * 0.6);
+    // 4. ARC SYSTEM GLOW
+    // Shift the color matrix toward Arc's Cyan/Indigo instead of terminal green
+    // Cyan: 0.02, 0.71, 0.83 | Indigo: 0.31, 0.27, 0.90
+    vec3 arcGlow = mix(baseColor, baseColor * vec3(1.2, 1.5, 1.8), hoverForce * 0.5);
     
-    gl_FragColor = vec4(terminalGlow - scanlines, alpha);
+    gl_FragColor = vec4(arcGlow, alpha);
   }
 `;
 
@@ -82,11 +95,11 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
     if (materialRef.current) {
       materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
       
-      // Increased lerp speed (0.05 -> 0.15) for a snappier digital activation
+      // Smooth, luxurious lerp speed (0.15 -> 0.05)
       materialRef.current.uniforms.uHover.value = THREE.MathUtils.lerp(
         materialRef.current.uniforms.uHover.value,
         hovered ? 1.0 : 0.0,
-        0.15
+        0.05
       );
 
       // Mouse tracking lerp
