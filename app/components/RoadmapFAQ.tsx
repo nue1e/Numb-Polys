@@ -5,11 +5,11 @@ import { useState } from 'react';
 const faqs = [
   {
     question: "What is Numb Polys?",
-    answer: "Numb Polys is a premium, 1,111-piece 3D generative digital collection on Arc. Moving away from standard algorithmic noise, every construct is deliberately crafted using custom PBR material shading, low-poly geometry, and exact material matching to create high-end visual identities for Web3 operatives."
+    answer: "Numb Polys is a premium, 1,111-piece 3D generative digital collection on Sui. Moving away from standard algorithmic noise, every construct is deliberately crafted using custom PBR material shading, low-poly geometry, and exact material matching to create high-end visual identities for Web3 operatives."
   },
   {
     question: "When is the mint and where?",
-    answer: "Mint parameters, launch dates, and exact supply metrics will be decrypted across our official X account (@NumbPolys) and Discord. The collection will be deployed natively on the Arc network."
+    answer: "Mint parameters, launch dates, and exact supply metrics will be decrypted across our official X account (@NumbPolys) and Discord. The collection will be deployed natively on the Sui network."
   },
   {
     question: "How do I get Syndicate Clearance (Whitelist)?",
@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     question: "What chain is Numb Polys deployed on?",
-    answer: "Numb Polys is deployed natively on the Arc blockchain for premium execution, instant finality, and seamless high-tier marketplace integration."
+    answer: "Numb Polys is deployed natively on the Sui blockchain for object-centric dynamic execution, instant finality, and seamless high-tier marketplace integration."
   },
   {
     question: "What is the utility?",
-    answer: "Every holder receives full commercial IP rights and exclusive access to gated syndicate channels based on their precise Rarity Tier (Civilian through Kingpin). Active operators will also gain classified access to future independent Web3 infrastructure currently being built in the shadows."
+    answer: "Every holder receives full commercial IP rights, object-centric trait modifiability, and exclusive access to gated syndicate channels based on their precise Rarity Tier (Civilian through Kingpin). Active operators will also gain classified access to future independent Web3 infrastructure currently being built in the shadows."
   }
 ];
 
@@ -86,7 +86,7 @@ export default function RoadmapFAQ() {
                     <span className="font-mono text-[10px] sm:text-xs">[ STANDBY ]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/5 pl-4">
-                    <span>Arc Ecosystem Integration</span>
+                    <span>Sui Ecosystem Integration</span>
                     <span className="font-mono text-[10px] sm:text-xs">[ STANDBY ]</span>
                   </li>
                   <li className="flex justify-between items-center border-l-2 border-white/5 pl-4">
@@ -128,7 +128,7 @@ export default function RoadmapFAQ() {
               | The Syndicate
             </h2>
             <p className="text-[#A3A3A3] text-xs sm:text-sm leading-relaxed mb-8 max-w-lg font-light">
-              Operating in the shadows. Numb Polys is architected solely by nue1e, executing low-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Arc network.
+              Operating in the shadows. Numb Polys is architected solely by nue1e, executing low-poly generative asset design, full-stack development, and strategic ecosystem expansion directly on the Sui network.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

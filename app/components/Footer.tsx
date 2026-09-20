@@ -13,7 +13,7 @@ export default function Footer() {
           <span className="hidden sm:inline text-white/20">|</span>
           <span className="text-neutral-500 tracking-wider flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#06B6D4] animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.5)]"></span>
-            ARC MAINNET ACTIVE
+            SUI MAINNET ACTIVE
           </span>
         </div>
 

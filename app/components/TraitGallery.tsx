@@ -93,7 +93,7 @@ export default function TraitGallery() {
         {/* Section Header */}
         <div className="absolute top-10 left-6 z-20 md:top-14 md:left-14 pointer-events-none">
           <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-[#A3A3A3] uppercase">
-            | ARC CLEARANCE PROTOCOL
+            | SUI CLEARANCE PROTOCOL
           </p>
           <h2 className="mt-2 text-xl sm:text-2xl font-medium uppercase tracking-widest text-[#E5E5E5] md:text-4xl">
             6 Syndicate Tiers
@@ -113,13 +113,13 @@ export default function TraitGallery() {
               <div
                 key={trait.id}
                 onClick={() => toggleCard(trait.id)}
-                className="group relative flex aspect-square w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] max-w-[420px] flex-col justify-between border border-white/10 bg-white/[0.02] backdrop-blur-md p-6 sm:p-8 cursor-pointer overflow-hidden transition-all duration-500 hover:border-white/30 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(79,70,229,0.15)] shrink-0 rounded-sm"
+                className="group relative flex aspect-square w-[85vw] sm:w-[45vw] md:w-[40vw] lg:w-[30vw] max-w-[420px] flex-col justify-between border border-white/10 bg-white/[0.02] backdrop-blur-md p-6 sm:p-8 cursor-pointer overflow-hidden transition-all duration-500 hover:border-[#06B6D4]/40 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(6,182,212,0.15)] shrink-0 rounded-sm"
               >
                 
                 {/* 1. COSMIC AURA HOVER EFFECT & WEBGL SHADER */}
                 <div className="absolute inset-0 z-0 opacity-50 transition-opacity duration-700 group-hover:opacity-100">
                   {/* Premium glowing background gradient that appears on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#4F46E5]/20 via-[#8B5CF6]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#06B6D4]/15 via-[#4F46E5]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   
                   <Canvas camera={{ position: [0, 0, 3] }}>
                     <ambientLight intensity={1} />
@@ -167,7 +167,7 @@ export default function TraitGallery() {
                   </div>
 
                   <div className="border-t border-white/10 pt-4 flex justify-between items-center font-mono text-[9px] sm:text-[10px] text-neutral-500">
-                    <span>NUMB_POLYS_ARC</span>
+                    <span>NUMB_POLYS_SUI</span>
                     <span className="text-[#06B6D4] animate-pulse">● SECURED</span>
                   </div>
                 </div>

@@ -19,10 +19,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// We must declare metadata in a separate file if using 'use client' in layout, 
-// or simply handle SEO in your page.tsx. For now, we will set the title directly 
-// in the HTML head below.
-
 // Setup the Sui Network connections
 const { networkConfig } = createNetworkConfig({
   mainnet: { url: getFullnodeUrl('mainnet') },
@@ -45,11 +41,13 @@ export default function RootLayout({
     >
       <head>
         <title>Numb Polys</title>
-        <meta name="description" content="A premium 1,111-piece 3D generative syndicate." />
+        <meta name="description" content="A premium 1,111-piece 3D generative syndicate on Sui." />
+        <meta name="theme-color" content="#0D0D11" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-[#0D0D11] text-[#E5E5E5]" suppressHydrationWarning>
         <QueryClientProvider client={queryClient}>
           <SuiClientProvider networks={networkConfig} defaultNetwork="mainnet">
             <WalletProvider autoConnect>

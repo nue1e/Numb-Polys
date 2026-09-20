@@ -11,7 +11,7 @@ export default function Documentation() {
             | SYSTEM CONFIGURATION: COMPREHENSIVE PROTOCOL ARCHIVE
           </p>
           <p className="font-mono text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500 uppercase mb-6">
-            | SECURITY CLASSIFICATION: LEVEL O-1 (SYNDICATE CORE) // ARC MAINNET
+            | SECURITY CLASSIFICATION: LEVEL O-1 (SYNDICATE CORE) // SUI NETWORK
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold uppercase tracking-widest text-white">
              The Numb Polys Core Spec
@@ -26,7 +26,7 @@ export default function Documentation() {
           <div className="space-y-4 text-sm text-[#A3A3A3] pl-4 border-l border-white/10 leading-relaxed font-light">
             <p><strong className="text-white font-medium">The Collapse of the Signal:</strong> The digital architecture shifted, and the world became deafening. Random noise disguised as culture flooded the ecosystem, built by algorithms with no intention and no vision. Society became distracted. In response, a complete architectural reset was initiated in the shadows.</p>
             <p><strong className="text-white font-medium">The Unfazed:</strong> We are the Numb Polys. We do not react to the noise. We remain completely unfazed. We are the operatives, the rogues, the ghosts, and the kingpins operating underneath the surface. Every fabric, every visor, every piece of rusted iron and gold-veined marble is meticulously curated for the high-stakes environment we navigate.</p>
-            <p><strong className="text-white font-medium">The 1,111 Constructs:</strong> The collection is strictly capped at 1,111 units to ensure extreme exclusivity. At the absolute apex of our hierarchy sit the 11 Mythics—anomalies of the system, led from the shadows by The Golden Runner from the Unknown.</p>
+            <p><strong className="text-white font-medium">The 1,111 Constructs:</strong> The collection is strictly capped at 1,111 units to ensure extreme exclusivity. At the absolute apex of our hierarchy sit the 11 Mythics; anomalies of the system, led from the shadows by The Golden Runner from the Unknown.</p>
             <p><strong className="text-white font-medium">The Directive:</strong> The operators who hold these Constructs now control the grid. The mission is absolute:<br />
             <span className="text-[#06B6D4] font-mono mr-2">✦</span> Establish the visual standard.<br />
             <span className="text-[#06B6D4] font-mono mr-2">✦</span> Consolidate the underworld.<br />
@@ -62,6 +62,13 @@ export default function Documentation() {
               </p>
             </div>
 
+            <div className="border-t border-white/5 pt-6">
+              <h4 className="text-white font-medium tracking-widest text-sm mb-2 uppercase">4. Object-Centric Dynamic Architecture</h4>
+              <p className="text-sm text-[#A3A3A3] font-light leading-relaxed">
+                Leveraging Sui&apos;s native object-centric model, Numb Polys transcends traditional static metadata. Every component; visors, headwear, outfits, and underlying base chassis, exists as an independent programmable object on-chain. This allows operators to seamlessly equip, unequip, customize, individually stake, and transfer modular traits as standalone assets, rendering asset rarity and visual presentation entirely dynamic.
+              </p>
+            </div>
+
           </div>
         </div>
 
@@ -84,7 +91,7 @@ export default function Documentation() {
             
             <div className="p-6 bg-white/[0.02] backdrop-blur-md border border-white/10 space-y-2 hover:border-white/30 hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(79,70,229,0.1)] transition-all duration-500 group rounded-sm">
               <h4 className="text-white font-medium uppercase tracking-wider group-hover:text-white transition-colors">3. Treasury Protocol</h4>
-              <p className="leading-relaxed">Activation of the syndicate treasury to forge high-value alliances and cement our presence within the broader Arc ecosystem.</p>
+              <p className="leading-relaxed">Activation of the syndicate treasury to forge high-value alliances and cement our presence within the broader Sui ecosystem.</p>
             </div>
             
             <div className="p-6 bg-gradient-to-br from-[#4F46E5]/10 to-transparent border border-[#4F46E5]/30 space-y-2 hover:border-[#4F46E5]/60 hover:shadow-[0_0_40px_rgba(79,70,229,0.2)] transition-all duration-500 group rounded-sm relative overflow-hidden">

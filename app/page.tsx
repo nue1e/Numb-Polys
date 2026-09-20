@@ -80,12 +80,12 @@ export default function Home() {
 
           <div className="flex justify-end w-[60%] sm:w-1/3">
             <a 
-              href="##" 
+              href="https://testnet.numbpolys.xyz/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="premium-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap rounded-sm"
             >
-              Mint Portal
+              Testnet Terminal
             </a>
           </div>
         </nav>
@@ -119,7 +119,7 @@ export default function Home() {
             textTransform: 'uppercase',
             lineHeight: '1.8',
           }}>
-            <span style={{ color: '#E5E5E5', opacity: 0.5 }}>|</span> 1,111 HIGH-POLY CONSTRUCTS SECURED ON ARC.<br/>
+            <span style={{ color: '#E5E5E5', opacity: 0.5 }}>|</span> 1,111 HIGH-POLY CONSTRUCTS SECURED ON SUI.<br/>
             THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE.
           </p>
         </div>

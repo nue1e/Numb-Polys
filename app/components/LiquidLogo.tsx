@@ -71,12 +71,10 @@ const fragmentShader = `
     float alpha = texG.a;
     vec3 baseColor = vec3(texR.r, texG.g, texB.b);
 
-    // 4. ARC SYSTEM GLOW
-    // Shift the color matrix toward Arc's Cyan/Indigo instead of terminal green
-    // Cyan: 0.02, 0.71, 0.83 | Indigo: 0.31, 0.27, 0.90
-    vec3 arcGlow = mix(baseColor, baseColor * vec3(1.2, 1.5, 1.8), hoverForce * 0.5);
+    // 4. SUI SYSTEM GLOW (Cyan / Executive Accent)
+    vec3 suiGlow = mix(baseColor, baseColor * vec3(1.2, 1.5, 1.8), hoverForce * 0.5);
     
-    gl_FragColor = vec4(arcGlow, alpha);
+    gl_FragColor = vec4(suiGlow, alpha);
   }
 `;
 
@@ -95,7 +93,7 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
     if (materialRef.current) {
       materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
       
-      // Smooth, luxurious lerp speed (0.15 -> 0.05)
+      // Smooth, luxurious lerp speed
       materialRef.current.uniforms.uHover.value = THREE.MathUtils.lerp(
         materialRef.current.uniforms.uHover.value,
         hovered ? 1.0 : 0.0,
