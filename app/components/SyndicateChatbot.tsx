@@ -82,31 +82,36 @@ export default function SyndicateChatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-28 sm:right-32 z-50 font-mono">
-      {!isOpen ? (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="bg-white/[0.03] backdrop-blur-md border border-white/15 p-3.5 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all duration-300 flex items-center justify-center cursor-pointer group relative"
-          aria-label="Open AI Terminal"
-        >
-          {/* Animated ping dot for the "online" status */}
-          <span className="absolute top-0 right-0 w-2.5 h-2.5 rounded-full bg-[#06B6D4] animate-pulse border border-[#0D0D11]"></span>
-          
-          {/* Sleek Bot Icon */}
-          <svg 
-            className="w-5 h-5 text-[#06B6D4] group-hover:text-[#E5E5E5] transition-colors drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="1.5" 
-            viewBox="0 0 24 24"
+    <>
+      {/* THE CHAT BOT ICON (Only shows when closed) */}
+      {!isOpen && (
+        // Added bottom-24 for mobile to clear the social icons, and sm:bottom-6 to keep it normal on PC
+        <div className="fixed bottom-24 right-6 sm:bottom-6 sm:right-32 z-50 font-mono">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative bg-white/[0.03] backdrop-blur-md border border-white/15 p-3.5 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all duration-300 flex items-center justify-center cursor-pointer group"
+            aria-label="Open AI Terminal"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8V4H8" />
-            <rect width="16" height="12" x="4" y="8" rx="2" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2 14h2M20 14h2M15 13v2M9 13v2" />
-          </svg>
-        </button>
-      ) : (
-        <div className="w-[320px] sm:w-[380px] bg-[#0D0D11]/95 backdrop-blur-xl border border-white/15 rounded-sm shadow-[0_0_40px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
+            <span className="absolute top-0 right-0 w-2.5 h-2.5 rounded-full bg-[#06B6D4] animate-pulse border border-[#0D0D11]"></span>
+            <svg 
+              className="w-5 h-5 text-[#06B6D4] group-hover:text-[#E5E5E5] transition-colors drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="1.5" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8V4H8" />
+              <rect width="16" height="12" x="4" y="8" rx="2" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2 14h2M20 14h2M15 13v2M9 13v2" />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      {/* THE OPEN CHAT WINDOW (Only shows when open) */}
+      {isOpen && (
+        <div className="fixed bottom-24 left-4 right-4 sm:bottom-6 sm:left-auto sm:right-32 sm:w-[380px] bg-[#0D0D11]/95 backdrop-blur-xl border border-white/15 rounded-sm shadow-[0_0_40px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 z-50 font-mono">
+          
           {/* Chat Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/[0.02]">
             <span className="text-[10px] text-[#06B6D4] uppercase tracking-widest flex items-center gap-2">
@@ -122,7 +127,7 @@ export default function SyndicateChatbot() {
           </div>
 
           {/* Messages Area */}
-          <div className="p-4 h-[280px] overflow-y-auto space-y-4 text-[11px] leading-relaxed scroll-smooth">
+          <div className="p-4 h-[50vh] max-h-[320px] overflow-y-auto space-y-4 text-[11px] leading-relaxed scroll-smooth">
             {messages.map((m, i) => (
               <div key={i} className={`flex flex-col ${m.sender === 'user' ? 'items-end' : 'items-start'}`}>
                 <span className="text-[9px] text-neutral-500 mb-1 tracking-wider uppercase">
@@ -154,6 +159,6 @@ export default function SyndicateChatbot() {
           </form>
         </div>
       )}
-    </div>
+    </>
   );
 }
