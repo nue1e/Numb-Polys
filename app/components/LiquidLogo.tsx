@@ -91,13 +91,32 @@ export default function LiquidLogo({ imageUrl }: { imageUrl: string }) {
 
   useFrame((state) => {
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
+      const time = state.clock.elapsedTime;
+      materialRef.current.uniforms.uTime.value = time;
       
-      // Smooth, luxurious lerp speed
+      // AUTO-DRIFT CYCLE LOGIC
+      const cycleLength = 12.0; // Total seconds for one full loop
+      const activeDuration = 4.0; // How many seconds the liquid ripples
+      
+      const timeInCycle = time % cycleLength;
+      const isAutoFlowing = timeInCycle < activeDuration;
+
+      // Prioritize physical hover, but fall back to the auto-drift timer
+      const targetHoverIntensity = (hovered || isAutoFlowing) ? 1.0 : 0.0;
+
+      // If auto-flowing and nobody is touching it, simulate a slow panning wave
+      if (isAutoFlowing && !hovered) {
+        targetMouse.current.set(
+          0.5 + Math.sin(time * 1.2) * 0.35, 
+          0.5 + Math.cos(time * 0.8) * 0.15
+        );
+      }
+      
+      // Smoothly blend the liquid effect on and off
       materialRef.current.uniforms.uHover.value = THREE.MathUtils.lerp(
         materialRef.current.uniforms.uHover.value,
-        hovered ? 1.0 : 0.0,
-        0.05
+        targetHoverIntensity,
+        0.03 // Gentle transition speed
       );
 
       // Mouse tracking lerp
