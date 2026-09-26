@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Left: Copyright & System Status */}
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <span className="text-[#E5E5E5] tracking-widest uppercase">
-            © NUMB_POLYS 2026
+            NUMB_POLYS 2026<sup className="text-[9px] ml-0.5">©</sup>
           </span>
           <span className="hidden sm:inline text-white/20">|</span>
           <span className="text-neutral-500 tracking-wider flex items-center gap-2">

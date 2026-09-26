@@ -7,11 +7,13 @@ import TraitGallery from './components/TraitGallery';
 import Documentation from './Documentation';
 import Footer from './components/Footer';
 import RoadmapFAQ from './components/RoadmapFAQ';
+import SyndicateChatbot from './components/SyndicateChatbot';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [logoScale, setLogoScale] = useState(1.0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -38,8 +40,11 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: '#0D0D11', minHeight: '100vh', color: '#E5E5E5', fontFamily: 'var(--font-geist-sans), sans-serif' }}>
       
-      {/* GLOBAL CSS INJECTION FOR PREMIUM BUTTONS */}
+      {/* GLOBAL CSS INJECTION */}
       <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
         .premium-btn {
           background-color: rgba(255, 255, 255, 0.03);
           border: 1px solid rgba(255, 255, 255, 0.15);
@@ -53,10 +58,59 @@ export default function Home() {
           border-color: #E5E5E5;
           transform: translateY(-1px);
         }
+        .nav-link {
+          font-family: monospace;
+          font-size: 10px;
+          letter-spacing: 0.15em;
+          color: #A3A3A3;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          position: relative;
+          padding-bottom: 2px;
+        }
+        .nav-link:hover {
+          color: #E5E5E5;
+        }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 1px;
+          bottom: -2px;
+          left: 0;
+          background-color: #06B6D4;
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
         .scroll-fade {
           background: linear-gradient(to bottom, transparent, rgba(13,13,17,1));
         }
       `}</style>
+
+      {/* MOBILE FULLSCREEN MENU */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-[#0D0D11]/98 backdrop-blur-2xl flex flex-col items-center justify-center animate-in fade-in duration-300">
+          <button 
+            onClick={() => setIsMobileMenuOpen(false)} 
+            className="absolute top-6 right-6 text-neutral-400 hover:text-white transition-colors cursor-pointer p-2"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div className="flex flex-col items-center gap-10 font-mono text-sm tracking-[0.25em]">
+            <a href="#protocol" onClick={() => setIsMobileMenuOpen(false)} className="text-[#A3A3A3] hover:text-[#E5E5E5] transition-colors">PROTOCOL</a>
+            <a href="#archive" onClick={() => setIsMobileMenuOpen(false)} className="text-[#A3A3A3] hover:text-[#E5E5E5] transition-colors">ARCHIVE</a>
+            <a href="#blueprints" onClick={() => setIsMobileMenuOpen(false)} className="text-[#A3A3A3] hover:text-[#E5E5E5] transition-colors">BLUEPRINTS</a>
+            <a href="#intel" onClick={() => setIsMobileMenuOpen(false)} className="text-[#A3A3A3] hover:text-[#E5E5E5] transition-colors">INTEL</a>
+            <a href="#founder" onClick={() => setIsMobileMenuOpen(false)} className="text-[#06B6D4] hover:text-white transition-colors drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]">SYNDICATE</a>
+          </div>
+        </div>
+      )}
 
       {/* 1. THE AMBIENT GRID BACKGROUND */}
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100dvh', zIndex: 0, pointerEvents: 'none' }}>
@@ -72,18 +126,39 @@ export default function Home() {
         {/* NAVIGATION */}
         <nav className="absolute top-0 w-full z-20 flex justify-between items-center px-4 sm:px-8 py-5 box-border">
           
-          <div className="w-1/3"></div>
-
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-6 w-auto sm:h-8 opacity-90" />
+          {/* LEFT: DESKTOP INTEL ANCHOR LINKS (Hidden on tablet/mobile) */}
+          <div className="hidden lg:flex justify-start w-1/3 gap-6 xl:gap-8 items-center z-30">
+            <a href="#protocol" className="nav-link">PROTOCOL</a>
+            <a href="#archive" className="nav-link">ARCHIVE</a>
+            <a href="#blueprints" className="nav-link">BLUEPRINTS</a>
+            <a href="#intel" className="nav-link">INTEL</a>
+            <a href="#founder" className="nav-link text-[#06B6D4]">SYNDICATE</a>
           </div>
 
-          <div className="flex justify-end w-[60%] sm:w-1/3">
+          {/* LEFT: MOBILE HAMBURGER MENU */}
+          <div className="flex lg:hidden justify-start w-1/3 z-30">
+            <button 
+              onClick={() => setIsMobileMenuOpen(true)} 
+              className="text-[#E5E5E5] hover:text-[#06B6D4] transition-colors cursor-pointer p-2"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* CENTER: LOGO CREST */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+            <img src="/assets/logo-crest.png" alt="Numb Polys Crest" className="h-10 w-auto sm:h-14 opacity-95 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500" />
+          </div>
+
+          {/* RIGHT: TERMINAL ACCESS */}
+          <div className="flex justify-end w-[60%] lg:w-1/3 z-30">
             <a 
               href="https://testnet.numbpolys.xyz/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="premium-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap rounded-sm"
+              className="premium-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap rounded-sm shadow-[0_0_15px_rgba(6,182,212,0.1)]"
             >
               Testnet Terminal
             </a>
@@ -126,7 +201,9 @@ export default function Home() {
 
         {/* HERO FOOTER & SCROLL ANCHOR */}
         <footer className="scroll-fade" style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '2rem', height: '150px', boxSizing: 'border-box' }}>
-          <div className="font-mono text-[10px] sm:text-xs tracking-widest text-neutral-500">© NUMB POLYS</div>
+          <div className="font-mono text-[10px] sm:text-xs tracking-widest text-neutral-500">
+            NUMB POLYS<sup className="text-[8px] ml-0.5">©</sup>
+          </div>
           
           <div className="flex flex-col items-center gap-4">
             <div className="animate-bounce text-[#E5E5E5] text-[10px] sm:text-xs tracking-widest opacity-50 uppercase">
@@ -150,25 +227,32 @@ export default function Home() {
 
       </div>
 
-      {/* CONTENT SECTIONS */}
+      {/* CONTENT SECTIONS WITH ID ANCHORS */}
       <div style={{ position: 'relative', zIndex: 20, backgroundColor: '#0D0D11', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         
-        <div style={{ padding: '4rem 0' }}>
+        <div id="protocol" style={{ padding: '4rem 0' }}>
           <TraitGallery />
         </div>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '4rem 0' }}>
+        <div id="archive" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '4rem 0' }}>
           <Documentation />
         </div>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '4rem 0' }}>
+        <div id="blueprints" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '4rem 0' }}>
           <RoadmapFAQ />
         </div>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div id="intel" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+          {/* Ensure your RoadmapFAQ component contains the FAQ/Intel section */}
+        </div>
+
+        <div id="founder" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <Footer />
         </div>
       </div>
+
+      {/* AI CHATBOT INTERFACE */}
+      <SyndicateChatbot />
     </div>
   );
 }
