@@ -66,7 +66,7 @@ export default function SyndicateChatbot() {
       } 
       // 8. Navigation & App
       else if (lower.includes('navigate') || lower.includes('terminal') || lower.includes('portal') || lower.includes('app') || lower.includes('where')) {
-        reply = "CLICK 'TESTNET TERMINAL' IN THE TOP RIGHT NAVIGATION TO ACCESS THE GENERATOR AND ARMORY HUD. SCROLL DOWN TO EXPLORE LORE, TIERS, AND THE CORE SPEC DOSSIER.";
+        reply = "CLICK 'ACCESS TERMINAL' IN THE TOP RIGHT NAVIGATION TO ACCESS THE GENERATOR AND ARMORY HUD. SCROLL DOWN TO EXPLORE LORE, TIERS, AND THE CORE SPEC DOSSIER.";
       } 
       // 9. Lore
       else if (lower.includes('lore') || lower.includes('story') || lower.includes('background') || lower.includes('unfazed')) {

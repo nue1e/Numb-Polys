@@ -155,12 +155,12 @@ export default function Home() {
           {/* RIGHT: TERMINAL ACCESS */}
           <div className="flex justify-end w-[60%] lg:w-1/3 z-30">
             <a 
-              href="https://testnet.numbpolys.xyz/" 
+              href="https://mainnet.numbpolys.xyz/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="premium-btn font-mono text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 block whitespace-nowrap rounded-sm shadow-[0_0_15px_rgba(6,182,212,0.1)]"
             >
-              Testnet Terminal
+              Access Terminal
             </a>
           </div>
         </nav>
