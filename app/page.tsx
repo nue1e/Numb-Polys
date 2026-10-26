@@ -194,7 +194,7 @@ export default function Home() {
             textTransform: 'uppercase',
             lineHeight: '1.8',
           }}>
-            <span style={{ color: '#E5E5E5', opacity: 0.5 }}>|</span> 1,111 HIGH-POLY CONSTRUCTS SECURED ON SUI.<br/>
+            <span style={{ color: '#E5E5E5', opacity: 0.5 }}>|</span> 1,111 LOW-POLY CONSTRUCTS SECURED ON SUI.<br/>
             THE 6 SYNDICATE TIERS DICTATE YOUR CLEARANCE.
           </p>
         </div>
